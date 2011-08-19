@@ -1,0 +1,5 @@
+﻿<?xml version="1.0"?>
+<google-api 
+  spreadsheetKey="SPREADSHEETKEY"
+  username="USERNAME"
+  password="PASSWORD" />

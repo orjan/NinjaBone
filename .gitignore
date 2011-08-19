@@ -1,0 +1,12 @@
+[Oo]bj/
+*.suo
+*.user
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+
+#Tooling
+_ReSharper*/
+
+
+NinjaBone/google-api.config
