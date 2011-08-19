@@ -76,10 +76,12 @@
     <Compile Include="Configuration\GoogleSpreadsheetConfiguration.cs" />
     <Compile Include="Configuration\ServiceHost.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NinjaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Views\Ninja\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\ajax-loader.png" />
@@ -125,9 +127,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="google-api.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="google-api.config" />
     <None Include="google-api.config.template" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
