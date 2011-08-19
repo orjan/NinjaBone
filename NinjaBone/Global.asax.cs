@@ -23,7 +23,7 @@ namespace NinjaBone
         {
             var appHost = new ServiceHost();
             appHost.Init();
-
+            routes.IgnoreRoute("{file}.manifest");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("api/{*pathInfo}");
 

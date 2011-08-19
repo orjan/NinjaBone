@@ -72,6 +72,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="application.manifest" />
     <Compile Include="Configuration\GoogleSpreadsheetConfiguration.cs" />
     <Compile Include="Configuration\ServiceHost.cs" />
     <Compile Include="Controllers\HomeController.cs" />

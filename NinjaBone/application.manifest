@@ -1,0 +1,14 @@
+﻿CACHE MANIFEST
+ 
+# Offline cache v1
+# html files
+
+/api/ninjas/cached
+
+/Content/jquery.mobile.css
+/Scripts/jquery-1.6.2.js
+/Scripts/jquery.mobile.js
+/Scripts/jquery.tmpl.js
+/Scripts/jquery.offline.js
+
+/
