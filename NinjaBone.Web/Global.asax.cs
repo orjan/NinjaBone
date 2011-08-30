@@ -1,9 +1,11 @@
-﻿using System.Reflection;
+﻿using System.Configuration;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
+using MvcMiniProfiler;
 using NinjaBone.Services.Ninja;
 using NinjaBone.Web.Configuration;
 using ServiceStack.CacheAccess;
@@ -50,7 +52,9 @@ namespace NinjaBone.Web
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof (MvcApplication).Assembly);
             builder.Register(c => new MemoryCacheClient()).As<ICacheClient>().SingleInstance();
-            builder.Register(c => new DummyNinjaService()).As<INinjaService>();
+            // builder.Register(c => new DummyNinjaService()).As<INinjaService>();
+            builder.Register(x => (ISpreadsheetConfiguration)ConfigurationManager.GetSection("google-api")).As<ISpreadsheetConfiguration>();
+            builder.RegisterType<GoogleNinjaService>().As<INinjaService>();
 
             IContainer container = builder.Build();
 
@@ -62,6 +66,20 @@ namespace NinjaBone.Web
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        protected void Application_BeginRequest()
+
+        {
+            if (Request.IsLocal)
+            {
+                MiniProfiler.Start();
+            } 
+        }
+
+        protected void Application_EndRequest()
+        {
+            MiniProfiler.Stop();
         }
     }
 }

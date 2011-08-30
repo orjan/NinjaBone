@@ -32,7 +32,7 @@
 
 
         var updateArticles = function(callback) {
-            $.retrieveJSON("/api/ninjas", function (json, status) {
+            $.retrieveJSON("/api/ninjas/cached", function (json, status) {
                 $("#ninjaList").remove(); //.append(content);
                 $("#ninjaTemplate").tmpl(json).appendTo("#content");
 
