@@ -29,4 +29,4 @@ _[mvc-mini-profiler](http://code.google.com/p/mvc-mini-profiler/) is a simple bu
 - Very easy to integrate in the website
 - Support for multiple databases
 
-I don't think that this profile will replace profilers like Überproof or .dottrace but it give a quick hint if the page is kosher.
+I don't think that this profile will replace profilers like Uberproof or .dottrace but it give a quick hint if the page is kosher.
