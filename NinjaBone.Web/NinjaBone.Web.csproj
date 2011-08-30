@@ -90,6 +90,7 @@
     <Compile Include="Configuration\AutoFacAdapter.cs" />
     <Compile Include="Configuration\GoogleSpreadsheetConfiguration.cs" />
     <Compile Include="Configuration\ServiceHost.cs" />
+    <Compile Include="Configuration\ServiceModule.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NinjaController.cs" />
     <Compile Include="Global.asax.cs">

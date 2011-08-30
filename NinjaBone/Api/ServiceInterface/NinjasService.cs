@@ -15,7 +15,7 @@ namespace NinjaBone.Api.ServiceInterface
     public class NinjasService : RestServiceBase<Ninjas>
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        private MiniProfiler profiler;
+        private readonly MiniProfiler profiler;
         // it's ok if this is null
 
         public NinjasService(INinjaService ninjaService)
@@ -28,11 +28,11 @@ namespace NinjaBone.Api.ServiceInterface
 
         public override object OnGet(Ninjas request)
         {
-            log.Debug("Get ninjas from Service");
+            string message = "Get ninjas from " + NinjaService.GetType().Name;
+            log.Debug(message);
 
             IEnumerable<Ninja> allNinjas;
-
-            using (profiler.Step("Get Ninjas from service"))
+            using (profiler.Step(message))
             {
                 allNinjas = NinjaService.GetAllNinjas();                
             }

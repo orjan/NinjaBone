@@ -31,15 +31,14 @@
         });
 
 
-        var updateArticles = function(callback) {
-            $.retrieveJSON("/api/ninjas/cached", function (json, status) {
-                $("#ninjaList").remove(); //.append(content);
+        var updateArticles = function (callback) {
+            // change call to /api/ninjas/cached to use cached version
+            $.retrieveJSON("/api/ninjas", function (json, status) {
+                $("#ninjaList").remove();
                 $("#ninjaTemplate").tmpl(json).appendTo("#content");
 
                 $("#ninjaList").listview();
                 $("#loading").hide();
-                // $("#ninjaList").refresh();
-                // $("#home").page();
 
                 // If this *isn't* a cache hit, but rather a
                 // successful Ajax request, queue an update task

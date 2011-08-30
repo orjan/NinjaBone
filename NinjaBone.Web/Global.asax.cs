@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Autofac;
+using Autofac.Configuration;
 using Autofac.Integration.Mvc;
 using MvcMiniProfiler;
 using NinjaBone.Services.Ninja;
@@ -51,10 +52,9 @@ namespace NinjaBone.Web
 
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof (MvcApplication).Assembly);
-            builder.Register(c => new MemoryCacheClient()).As<ICacheClient>().SingleInstance();
-            // builder.Register(c => new DummyNinjaService()).As<INinjaService>();
-            builder.Register(x => (ISpreadsheetConfiguration)ConfigurationManager.GetSection("google-api")).As<ISpreadsheetConfiguration>();
-            builder.RegisterType<GoogleNinjaService>().As<INinjaService>();
+            
+            // Load module from web.config
+            builder.RegisterModule(new ConfigurationSettingsReader());
 
             IContainer container = builder.Build();
 
