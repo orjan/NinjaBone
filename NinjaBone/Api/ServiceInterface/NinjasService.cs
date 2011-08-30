@@ -13,6 +13,11 @@ namespace NinjaBone.Api.ServiceInterface
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+        public NinjasService(INinjaService ninjaService)
+        {
+            NinjaService = ninjaService;
+        }
+
         public INinjaService NinjaService { get; set; }
 
         public override object OnGet(Ninjas request)
