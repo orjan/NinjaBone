@@ -68,6 +68,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Operations\CachedNinjas.cs" />
+    <Compile Include="Api\Operations\NinjasResponse.cs" />
+    <Compile Include="Api\ServiceInterface\CachedNinjasService.cs" />
     <Compile Include="Models\Ninja.cs" />
     <Compile Include="Api\Operations\Ninjas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
