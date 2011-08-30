@@ -6,10 +6,14 @@ using ServiceStack.WebHost.Endpoints;
 
 namespace NinjaBone.Web.Configuration
 {
-    /// Web Service Singleton AppHost
+    /// <summary>
+    /// The service host is used to register the ServiceStack services in the application
+    /// NOTE: it's important that the ServiceHost is internal to avoid a lookup for the dependency from ServiceStack
+    /// </summary>
     internal class ServiceHost : AppHostBase
     {
         private readonly IContainerAdapter adapter;
+        
         //Tell Service Stack the name of your application and where to find your web services
         public ServiceHost(IContainerAdapter adapter)
             : base("Tretton37 Web Services", typeof (Ninjas).Assembly)
