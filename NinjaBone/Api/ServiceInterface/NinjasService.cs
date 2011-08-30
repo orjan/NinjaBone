@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
+using MvcMiniProfiler;
 using NinjaBone.Api.Operations;
+using NinjaBone.Models;
 using NinjaBone.Services.Ninja;
 using ServiceStack.CacheAccess;
 using ServiceStack.ServiceHost;
@@ -12,10 +15,13 @@ namespace NinjaBone.Api.ServiceInterface
     public class NinjasService : RestServiceBase<Ninjas>
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private MiniProfiler profiler;
+        // it's ok if this is null
 
         public NinjasService(INinjaService ninjaService)
         {
             NinjaService = ninjaService;
+            profiler = MiniProfiler.Current;
         }
 
         public INinjaService NinjaService { get; set; }
@@ -24,9 +30,16 @@ namespace NinjaBone.Api.ServiceInterface
         {
             log.Debug("Get ninjas from Service");
 
+            IEnumerable<Ninja> allNinjas;
+
+            using (profiler.Step("Get Ninjas from service"))
+            {
+                allNinjas = NinjaService.GetAllNinjas();                
+            }
+            
             var ninjaResponse = new NinjasResponse
                                     {
-                                        Ninjas = NinjaService.GetAllNinjas()
+                                        Ninjas = allNinjas
                                     };
 
             return ninjaResponse;
