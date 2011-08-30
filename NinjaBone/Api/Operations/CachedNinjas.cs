@@ -1,13 +1,13 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Runtime.Serialization;
 using ServiceStack.ServiceHost;
 
 namespace NinjaBone.Api.Operations
 {
     [DataContract]
-    [Description("Tretton37 ninjas")]
-    [RestService("/ninjas")]
-    public class Ninjas
+    [Description("Tretton37 cached ninjas.")]
+    [RestService("/ninjas/cached")]
+    public class CachedNinjas
     {
     }
 }
