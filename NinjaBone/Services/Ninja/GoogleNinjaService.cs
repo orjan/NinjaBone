@@ -23,10 +23,11 @@ namespace NinjaBone.Services.Ninja
         {
             ListFeed feed =
                 service.Query(new ListQuery(googleSpreadsheetConfiguration.SpreadsheetKey, "1", "private", "values"));
-
+            var i = 1;
             return from ListEntry entry in feed.Entries
                    select new Models.Ninja
                               {
+                                  Id = i++,
                                   Name = entry.Elements[0].Value,
                                   Phone = entry.Elements[1].Value
                               };
