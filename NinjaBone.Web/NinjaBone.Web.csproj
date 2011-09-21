@@ -92,13 +92,21 @@
     <Compile Include="Configuration\ServiceHost.cs" />
     <Compile Include="Configuration\ServiceModule.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NinjaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Views\Ninja\View.cshtml" />
-    <Content Include="Views\Home\Ninjas.cshtml" />
+    <Content Include="Content\icons\FaceBook_32x32.png" />
+    <Content Include="Content\icons\Skype_32.png" />
+    <Content Include="Content\icons\Twitter_32.png" />
+    <Content Include="Content\icons\XBOX-360-32.png" />
+    <Content Include="Content\jquery.mobile-1.0b3.css" />
+    <Content Include="Content\jquery.mobile-1.0b3.js" />
+    <Content Include="Content\jquery.mobile-1.0b3.min.css" />
+    <Content Include="Content\jquery.mobile-1.0b3.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.0b3.js" />
+    <Content Include="Scripts\jquery.mobile-1.0b3.min.js" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\ajax-loader.png" />
@@ -136,15 +144,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NinjaBone\NinjaBone.csproj">
       <Project>{50E908B9-24F4-4582-8783-BCB1DDA32474}</Project>
       <Name>NinjaBone</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\site.css" />
     <None Include="google-api.config" />
     <None Include="google-api.config.template" />
   </ItemGroup>

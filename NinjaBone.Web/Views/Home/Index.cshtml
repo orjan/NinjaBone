@@ -1,70 +1,42 @@
-﻿@model object
+﻿@using NinjaBone.Models
+@model IEnumerable<Ninja>
 
-<script id="ninjaTemplate" type="text/x-jquery-tmpl">
-    <ul id="ninjaList">
-        {{each(i, ninja) Ninjas}}
-            <li><a href="/Ninja/View/1">${ninja.Name}-${ninja.Phone}</a></li>
-        {{/each}}	   
-    </ul>    
-</script>
-
-<div data-role="page" id="home"> 
-    <div data-role="header">Tretton37 Ninjas</div>
-    <div data-role="content" id="content">
-        <h1 id="loading">Loading</h1>
-    </div>
-    <div data-role="footer">Foot</div> 
+@{
+    ViewBag.Title = "Meet the ninjas";
+    List<Ninja> ninjas = Model.ToList();
+}
+<div data-role="page" id="page">
+    <div data-role="header">
+        <h1>Ninja book</h1>
+    </div><!-- /header -->
+ 
+    <div data-role="content">
+        <ul data-role="listview">
+            @foreach (Ninja ninja in ninjas)
+            {
+                <li><a href="#ninja-@ninja.Id">@ninja.Name</a></li>
+            }
+        </ul>
+    </div><!-- /content -->
 </div>
 
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        // Since jQuery.retrieveJSON delegates to jQuery's Ajax
-        // to make requests, we can just set up normal jQuery
-        // Ajax listeners.
-        $("#loading").ajaxStart(function() {
-            console.log("Show");
-            $(this).show();
-        });
-        $("#loading").ajaxStop(function() {
-            console.log("Hide");
-            $(this).hide();
-        });
+@foreach (Ninja ninja in ninjas)
+{
+    <div data-role="page" id="ninja-@ninja.Id">
+        <div data-role="header">
+            <h1>@ninja.Name</h1>
+        </div><!-- /header -->
+        
+        <ul data-role="listview">
+            <li class="twitter">@ninja.Twitter</li>    
+            <li class="skype">@ninja.Skype</li>    
+            <li class="facebook">@ninja.Facebook</li>    
+        </ul>
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><a href="mailto:@ninja.Email" data-role="button">Send Mail</a></div>
+            <div class="ui-block-b"><a href="tel:@ninja.Phone" data-role="button">Call</a></div>	   
+        </fieldset>
 
-
-        var updateArticles = function (callback) {
-            // change call to /api/ninjas/cached to use cached version
-            $.retrieveJSON("/api/ninjas", function (json, status) {
-                $("#ninjaList").remove();
-                $("#ninjaTemplate").tmpl(json).appendTo("#content");
-
-                $("#ninjaList").listview();
-                $("#loading").hide();
-
-                // If this *isn't* a cache hit, but rather a
-                // successful Ajax request, queue an update task
-                // for five minutes from now.
-                if (status == "success") {
-                    // setTimeout(callback, 300000);
-                    setTimeout(callback, 5000);
-                }
-            });
-        };
-
-        // In five minutes, kick off a background request for
-        // more data. If the user is online, it will be processed
-        // immediately. If the user is not, it will queue the
-        // request for when the user comes online
-        setTimeout(function periodicUpdater() {
-            // Pass in this function as the callback to updateArticles
-            updateArticles(periodicUpdater);
-        }, 5000);
-
-        // Immediately try to retrieve the data. If the cached
-        // data is available, it will be used.
-        //
-        // If the user is online, it will kick off a request for
-        // updated content in the background. If not, it will
-        // queue the request for later.
-        updateArticles();
-    });
-</script>
+    </div>
+    <!-- /page -->
+}

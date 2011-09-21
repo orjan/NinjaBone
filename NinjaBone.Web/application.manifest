@@ -1,21 +1,21 @@
 ﻿CACHE MANIFEST
- 
-# Offline cache v1
-# html files
-
-/api/ninjas/cached
+# rev 43
 
 /Content/jquery.mobile.css
+/Content/site.css
 /Scripts/jquery-1.6.2.js
-/Scripts/jquery.mobile.js
-/Scripts/jquery.tmpl.js
-/Scripts/jquery.offline.js
-
+/Scripts/jquery.mobile-1.0b3.js
 /Content/images/ajax-loader.png
-/Content/images/icon-search-black.png
+/Content/images/icons-18-white.png
 /Content/images/icons-18-black.png
 /Content/images/icons-18-white.png
 /Content/images/icons-36-black.png
 /Content/images/icons-36-white.png
+/Content/icons/FaceBook_32x32.png
+/Content/icons/Skype_32.png
+/Content/icons/Twitter_32.png
+/Content/icons/XBOX-360-32.png
+
+
 
 /

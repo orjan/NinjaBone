@@ -16,13 +16,7 @@ namespace NinjaBone.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult Ninjas()
-        {
             return View(ninjaService.GetAllNinjas());
         }
-
     }
 }
