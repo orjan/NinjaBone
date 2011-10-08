@@ -1,4 +1,6 @@
-﻿namespace NinjaBone.Models
+﻿using System.Collections.Generic;
+
+namespace NinjaBone.Models
 {
     public class Ninja
     {
@@ -13,5 +15,17 @@
         public string Twitter { get; set; }
         public string Facebook { get; set; }
         public string Xbox { get; set; }
+
+        public string Skills { get; set; }
+
+        public IEnumerable<Skill> GetSkills()
+        {
+            var skills = Skills.Split(',');
+
+            foreach (var skill in skills)
+            {
+                yield return new Skill {Name = skill.Trim() };
+            }
+        }
     }
 }
