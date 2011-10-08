@@ -11,7 +11,7 @@
         <ul data-role="listview">
             @foreach (Ninja ninja in Model)
             {
-                <li><a href="#">@ninja.Name</a></li>
+                <li><a href="/Home/#ninja-@ninja.Id">@ninja.Name</a></li>
             }
         </ul>
     </div>
