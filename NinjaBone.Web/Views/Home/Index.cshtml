@@ -6,14 +6,7 @@
     List<Ninja> ninjas = Model.ToList();
 }
 <div data-role="page">
-    <div data-role="header" data-id="foo1" data-position="fixed">
-		<div data-role="navbar">
-			<ul>
-				<li><a href="/" class="ui-btn-active ui-state-persist">Ninjas</a></li>
-				<li><a href="skills/">Mad skills</a></li>
-			</ul>
-		</div><!-- /navbar -->
-	</div>
+
 
     <div data-role="content">
         <ul data-role="listview">
@@ -23,6 +16,15 @@
             }
         </ul>
     </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="/" class="ui-btn-active">Ninjas</a></li>
+				<li><a href="skills/">Mad skills</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div>
     
 </div>
 

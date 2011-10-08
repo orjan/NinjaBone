@@ -151,7 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\site.css" />
-    <None Include="google-api.config" />
+    <None Include="google-api.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="google-api.config.template" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

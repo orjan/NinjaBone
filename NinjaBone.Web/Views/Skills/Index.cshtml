@@ -1,21 +1,30 @@
-﻿@model object
+﻿@using NinjaBone.Models
+@model IEnumerable<Skill>
+
 
 @{
     ViewBag.Title = "Mad skills";
+    List<Skill> skills = Model.ToList();
 }
 
 <div data-role="page">
-    <div data-role="header" data-id="foo1" data-position="fixed">
+    
+    <div data-role="content">
+        <ul data-role="listview">
+            @foreach (Skill skill in skills)
+            {
+                <li><a href="/skills/">@skill.Name</a></li>
+            }
+        </ul>
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
 				<li><a href="/" >Ninjas</a></li>
-				<li><a href="skills/" class="ui-btn-active ui-state-persist">Mad skills</a></li>
+				<li><a href="skills/" class="ui-btn-active">Mad skills</a></li>
 			</ul>
 		</div><!-- /navbar -->
 	</div>
 
-    <div data-role="content">
-        junk
-    </div><!-- /content -->
-    
 </div>
