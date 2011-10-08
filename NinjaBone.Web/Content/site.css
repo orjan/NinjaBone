@@ -13,3 +13,9 @@
 .twitter {
     background: url('./icons/Twitter_32.png') right no-repeat
 }
+
+.subHeader
+{
+    font-size: 14px;
+    padding: .4em 15px; 
+}
