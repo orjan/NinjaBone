@@ -5,11 +5,16 @@
     ViewBag.Title = "Meet the ninjas";
     List<Ninja> ninjas = Model.ToList();
 }
-<div data-role="page" id="page">
-    <div data-role="header">
-        <h1>Ninja book</h1>
-    </div><!-- /header -->
- 
+<div data-role="page">
+    <div data-role="header" data-id="foo1" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="/" class="ui-btn-active ui-state-persist">Ninjas</a></li>
+				<li><a href="skills/">Mad skills</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div>
+
     <div data-role="content">
         <ul data-role="listview">
             @foreach (Ninja ninja in ninjas)
@@ -18,6 +23,7 @@
             }
         </ul>
     </div><!-- /content -->
+    
 </div>
 
 @foreach (Ninja ninja in ninjas)

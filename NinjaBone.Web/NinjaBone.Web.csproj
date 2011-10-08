@@ -92,6 +92,7 @@
     <Compile Include="Configuration\ServiceHost.cs" />
     <Compile Include="Configuration\ServiceModule.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -100,13 +101,14 @@
     <Content Include="Content\icons\Skype_32.png" />
     <Content Include="Content\icons\Twitter_32.png" />
     <Content Include="Content\icons\XBOX-360-32.png" />
-    <Content Include="Content\jquery.mobile-1.0b3.css" />
-    <Content Include="Content\jquery.mobile-1.0b3.js" />
-    <Content Include="Content\jquery.mobile-1.0b3.min.css" />
-    <Content Include="Content\jquery.mobile-1.0b3.min.js" />
+    <Content Include="Content\jquery.mobile-1.0rc1.css" />
+    <Content Include="Content\jquery.mobile-1.0rc1.js" />
+    <Content Include="Content\jquery.mobile-1.0rc1.min.css" />
+    <Content Include="Content\jquery.mobile-1.0rc1.min.js" />
     <Content Include="Scripts\jquery.mobile-1.0b3.js" />
     <Content Include="Scripts\jquery.mobile-1.0b3.min.js" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Skills\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\ajax-loader.png" />
@@ -115,8 +117,6 @@
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
-    <Content Include="Content\jquery.mobile.css" />
-    <Content Include="Content\jquery.mobile.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
