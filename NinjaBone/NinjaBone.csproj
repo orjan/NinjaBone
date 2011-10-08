@@ -82,6 +82,7 @@
     <Compile Include="Services\Ninja\INinjaService.cs" />
     <Compile Include="Services\Skills\DummySkillsService.cs" />
     <Compile Include="Services\Skills\ISkillsService.cs" />
+    <Compile Include="Services\Skills\GoogleSkillsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

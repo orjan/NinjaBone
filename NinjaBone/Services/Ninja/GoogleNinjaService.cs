@@ -36,6 +36,8 @@ namespace NinjaBone.Services.Ninja
                                                    Xbox = entry.Elements[6].Value,
                                                    Phone = entry.Elements[9].Value,
                                                    Email = entry.Elements[11].Value,
+                                                   Skills = entry.Elements[12].Value
+                                                   
                                                };
             return allNinjas.OrderBy(o=>o.Name); //.OrderBy(x=>x.Name);
 
