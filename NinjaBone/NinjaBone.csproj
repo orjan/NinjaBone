@@ -78,7 +78,7 @@
     <Compile Include="ISpreadsheetConfiguration.cs" />
     <Compile Include="Api\ServiceInterface\NinjasService.cs" />
     <Compile Include="Services\Ninja\DummyNinjaService.cs" />
-    <Compile Include="Services\Skills\GoogleNinjaService.cs" />
+    <Compile Include="Services\Ninja\GoogleNinjaService.cs" />
     <Compile Include="Services\Ninja\INinjaService.cs" />
     <Compile Include="Services\Skills\DummySkillsService.cs" />
     <Compile Include="Services\Skills\ISkillsService.cs" />
