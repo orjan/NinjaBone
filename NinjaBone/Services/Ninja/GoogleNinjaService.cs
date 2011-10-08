@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Google.GData.Spreadsheets;
@@ -42,6 +43,11 @@ namespace NinjaBone.Services.Ninja
             return allNinjas.OrderBy(o=>o.Name); //.OrderBy(x=>x.Name);
 
             // Namn	Adress	Postnr	Skypenamn	Twitternamn	Facebook	MSN, Gtalk eller annan IM	Playstation Network	Xbox Live	1337 Telefonnr	Annat telefonnummer	E-mail
+        }
+
+        public IEnumerable<Models.Ninja> GetNinjasBySkill(string skill)
+        {
+            return GetAllNinjas().Where(ninja => ninja.GetSkills().Count(x => x.Name.Equals(skill, StringComparison.OrdinalIgnoreCase)) > 0);
         }
 
         #endregion

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace NinjaBone.Services.Ninja
@@ -7,6 +8,11 @@ namespace NinjaBone.Services.Ninja
         public IEnumerable<Models.Ninja> GetAllNinjas()
         {
             yield return new Models.Ninja { Name = "Apan Ola", Phone = "0704-224284" };
+        }
+
+        public IEnumerable<Models.Ninja> GetNinjasBySkill(string skill)
+        {
+            yield return new Models.Ninja { Name = "Apan Ola with skills", Phone = "0704-224284" };
         }
     }
 }
