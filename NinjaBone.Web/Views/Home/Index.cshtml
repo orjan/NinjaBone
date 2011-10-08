@@ -34,12 +34,25 @@
         <div data-role="header">
             <h1>@ninja.Name</h1>
         </div><!-- /header -->
-        
+            
         <ul data-role="listview">
             <li class="twitter">@ninja.Twitter</li>    
             <li class="skype">@ninja.Skype</li>    
-            <li class="facebook">@ninja.Facebook</li>    
+            <li class="facebook">@ninja.Facebook</li>
         </ul>
+
+         <div data-role="header">
+            <div class="subHeader">Skills</div>
+        </div>
+
+        <ul data-role="listview">
+            @foreach (var skill in ninja.GetSkills())
+            {
+                <li>@skill.Name</li>
+            }
+            
+        </ul>
+
         <fieldset class="ui-grid-a">
             <div class="ui-block-a"><a href="mailto:@ninja.Email" data-role="button">Send Mail</a></div>
             <div class="ui-block-b"><a href="tel:@ninja.Phone" data-role="button">Call</a></div>	   
