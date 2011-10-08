@@ -23,7 +23,8 @@ namespace NinjaBone.Services.Skills
         {
             var skills = new List<Skill>();
 
-            _ninjaService.GetAllNinjas().ToList().ForEach(x => skills.AddRange(x.GetSkills()));
+            _ninjaService.GetAllNinjas().ToList().ForEach(
+                x => skills.AddRange(x.GetSkills()));
 
             return skills.Distinct();
         }
