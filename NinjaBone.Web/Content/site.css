@@ -19,3 +19,13 @@
     font-size: 14px;
     padding: .4em 15px; 
 }
+
+.ninjaheader 
+{
+    vertical-align: middle;
+}
+
+.ninjaheader img
+{
+    float: right;
+}
