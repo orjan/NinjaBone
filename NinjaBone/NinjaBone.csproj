@@ -73,12 +73,15 @@
     <Compile Include="Api\ServiceInterface\CachedNinjasService.cs" />
     <Compile Include="Models\Ninja.cs" />
     <Compile Include="Api\Operations\Ninjas.cs" />
+    <Compile Include="Models\Skill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ISpreadsheetConfiguration.cs" />
     <Compile Include="Api\ServiceInterface\NinjasService.cs" />
     <Compile Include="Services\Ninja\DummyNinjaService.cs" />
     <Compile Include="Services\Ninja\GoogleNinjaService.cs" />
     <Compile Include="Services\Ninja\INinjaService.cs" />
+    <Compile Include="Services\Skills\DummySkillsService.cs" />
+    <Compile Include="Services\Skills\ISkillsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
