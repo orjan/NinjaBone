@@ -109,6 +109,7 @@
     <Content Include="Scripts\jquery.mobile-1.0b3.min.js" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Skills\Index.cshtml" />
+    <Content Include="Views\Skills\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\ajax-loader.png" />

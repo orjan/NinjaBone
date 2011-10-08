@@ -13,7 +13,7 @@
         <ul data-role="listview">
             @foreach (Skill skill in skills)
             {
-                <li><a href="/skills/">@skill.Name</a></li>
+                <li><a href="show?skillName=@Url.Encode(@skill.Name)">@skill.Name</a></li>
             }
         </ul>
     </div>

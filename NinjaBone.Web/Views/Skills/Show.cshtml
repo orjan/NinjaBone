@@ -1,0 +1,18 @@
+﻿@using NinjaBone.Models
+@model System.Collections.Generic.IEnumerable<NinjaBone.Models.Ninja>
+
+@{
+    ViewBag.Title = "Mad ninjas";
+}
+
+<div data-role="page">
+    
+    <div data-role="content">
+        <ul data-role="listview">
+            @foreach (Ninja ninja in Model)
+            {
+                <li><a href="#">@ninja.Name</a></li>
+            }
+        </ul>
+    </div>
+</div>
