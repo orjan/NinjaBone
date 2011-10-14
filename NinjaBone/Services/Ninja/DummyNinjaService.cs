@@ -7,7 +7,7 @@ namespace NinjaBone.Services.Ninja
     {
         public IEnumerable<Models.Ninja> GetAllNinjas()
         {
-            yield return new Models.Ninja { Name = "Apan Ola", Phone = "0704-224284" };
+            yield return new Models.Ninja { Name = "Apan Ola2", Phone = "0704-224284" };
         }
 
         public IEnumerable<Models.Ninja> GetNinjasBySkill(string skill)
