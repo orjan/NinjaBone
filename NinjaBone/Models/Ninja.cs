@@ -20,6 +20,11 @@ namespace NinjaBone.Models
 
         public IEnumerable<Skill> GetSkills()
         {
+            if (string.IsNullOrWhiteSpace(Skills))
+            {
+                yield break;
+            }
+
             var skills = Skills.Split(',');
 
             foreach (var skill in skills)
